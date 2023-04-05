@@ -1,7 +1,29 @@
 import React, { useState } from "react";
 import axios, { AxiosResponse } from "axios";
 
+interface ProductType {
+  id: string;
+  title: string;
+  description: string;
+  price: string;
+  discountPercentage: string;
+  rating: string;
+  stock: string;
+  brand: string;
+  category: string;
+  thumbnail: string;
+  images: Array<string>;
+}
+
+interface ProductResponse {
+  limit: number;
+  products: Array<ProductType>;
+  skip: number;
+  total: number;
+}
+
 const url = "https://dummyjson.com/products";
+
 const List: React.FC = () => {
   const [productList, setProductList] = useState<Array<ProductType>>([]);
 
