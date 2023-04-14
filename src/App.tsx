@@ -8,6 +8,7 @@ import ThemeChangerMemo from "./components/ThemeChangerMemo";
 import PageDetails from "./components/PageDetails";
 import InputBoxWithClear from "./components/InputBoxWithClear";
 import List from "./components/List";
+import MyForm from "./components/MyForm";
 // import Products from "./components/Product";
 
 function App() {
@@ -21,10 +22,11 @@ function App() {
       <hr /> */}
       {/* <ThemeChanger /> */}
       {/* <ThemeChangerMemo /> */}
-      <PageDetails />
+      {/* <PageDetails /> */}
       {/* <InputBoxWithClear /> */}
       {/* <List /> */}
       {/* <Products /> */}
+      <MyForm />
     </div>
   );
 }
