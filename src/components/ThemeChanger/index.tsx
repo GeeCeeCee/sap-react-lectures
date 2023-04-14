@@ -9,6 +9,10 @@ const ThemeChanger: React.FC = () => {
     return [number, number + 1, number + 2];
   }, [number]);
 
+  // const getItems = () => {
+  //   return [number, number + 1, number + 2];
+  // };
+
   const theme = {
     backgroundColor: isDark ? "#333" : "#FFF",
     color: isDark ? "#FFF" : "#333",
@@ -26,7 +30,9 @@ const ThemeChanger: React.FC = () => {
         }
       />
       <button onClick={() => setDark(!isDark)}>Toggle Theme</button>
-      <List getItems={getItems} />
+      <section className="list-item">
+        <List getItems={getItems} />
+      </section>
     </div>
   );
 };

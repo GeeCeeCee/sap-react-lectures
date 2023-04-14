@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios, { AxiosResponse } from "axios";
-
+import "./list.css";
 interface ProductType {
   id: string;
   title: string;
@@ -15,7 +15,7 @@ interface ProductType {
   images: Array<string>;
 }
 
-interface ProductResponse {
+export interface ProductResponse {
   limit: number;
   products: Array<ProductType>;
   skip: number;
@@ -24,19 +24,26 @@ interface ProductResponse {
 
 const url = "https://dummyjson.com/products";
 
-const List: React.FC = () => {
+interface ListProps {
+    count: number;
+    getProducts: () => Array<ProductType>
+}
+
+const List: React.FC<ListProps> = ({count, getProducts}) => {
   const [productList, setProductList] = useState<Array<ProductType>>([]);
 
   React.useEffect(() => {
-    axios.get(url).then((response: AxiosResponse<ProductResponse>) => {
-      setProductList(response.data.products);
-    });
+    // axios.get(url).then((response: AxiosResponse<ProductResponse>) => {
+    //   setProductList(response.data.products);
+    // });
+
+    setProductList(getProducts)
   }, []);
 
   return (
-    <ul>
-      {productList.map((product: ProductType) => (
-        <li key={product.id} style={{ maxWidth: "200px", padding: "20px" }}>
+    <ul className="ul-root">
+      {productList.map((product: ProductType, index: number) => (
+        index < count && <li key={product.id} style={{ maxWidth: "200px", padding: "20px" }}>
           {product.title}
         </li>
       ))}

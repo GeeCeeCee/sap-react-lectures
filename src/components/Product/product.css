@@ -1,0 +1,21 @@
+.counter-root {
+    position: fixed;
+    right: 10px;
+    top: 30px;
+}
+
+.toggle-theme  {
+    position: fixed;
+    right: 10px;
+    top: 60px;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.white {
+    background-color: white;
+    color: black;
+}

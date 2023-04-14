@@ -5,7 +5,7 @@ export function reducer(state: State, action: Action) {
     case "increment":
       return { count: state.count + 1 };
     case "decrement":
-      return { count: state.count - 1 };
+      return { count: state.count - 1 <= 1 ? 1: state.count - 1 };
     case "reset":
       return { count: action.payload };
     default:
